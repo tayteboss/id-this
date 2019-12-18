@@ -1,0 +1,55 @@
+
+.song-identifier {
+    background-color: #f2f2f2;
+    display: flex;
+    padding: 35px 50px;
+    border-top: 1px solid #e5e5e5;
+    height: 60vh;
+    position: relative;
+    
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        
+        .step-hint {
+        
+            span {
+                opacity: 0.5;
+            }
+    
+            p {
+                display: inline-block;
+                opacity: 0.7;
+            }
+        }
+    }
+}
+
+.loading-hint {
+    margin-top: 25px;
+}
+
+.fact-wrapper {
+
+    h2 {
+        padding-left: 95px;
+        margin-top: 65px;
+        width: 500px;
+    }
+}
+
+.percentage-loader {
+    opacity: 0.5;
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+}
+
+.loading-bar {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    height: 2px;
+    background-color: #b2b2b2;
+    transition: width 400ms ease;
+}

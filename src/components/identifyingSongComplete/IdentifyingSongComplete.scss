@@ -1,0 +1,26 @@
+
+.song-identifier-complete {
+    background-color: #f2f2f2;
+    display: flex;
+    padding: 35px 50px;
+    border-top: 1px solid #e5e5e5;
+    height: 20vh;
+
+    
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        
+        .step-hint {
+        
+            span {
+                opacity: 0.5;
+            }
+    
+            p {
+                display: inline-block;
+                opacity: 0.7;
+            }
+        }
+    }
+}

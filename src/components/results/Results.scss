@@ -1,0 +1,104 @@
+
+
+
+.results {
+    display: flex;
+    border-top: 1px solid #e5e5e5;
+    padding: 35px 0 0 50px;
+    height: 70vh;
+
+    .loading-hint {
+        margin-top: 25px;
+        margin-bottom: 85px;
+    }
+
+    .step-hint {
+
+        span {
+            opacity: 0.5;
+        }
+
+        p {
+            display: inline-block;
+            opacity: 0.7;
+        }
+    }
+    
+    .tracklist-wrapper {
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+
+        article:first-child {
+            display: flex;
+            align-items: center;
+            padding-left: 95px;
+            margin-top: 65px;
+        }
+
+        article {
+            display: flex;
+            align-items: center;
+            padding-left: 95px;
+
+            .timestamp {
+                opacity: 0.5;
+            }
+        }
+
+        .track-details-wrapper {
+            margin-left: 25px;
+            padding-left: 25px;
+            width: 100%;
+            border-left: 1px solid #e5e5e5;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            transition: background-color 300ms ease;
+
+            h2 {
+                margin-bottom: 0;
+            }
+            
+            p {
+                margin-top: 7px;
+            }
+
+            .track-links {
+                display: flex;
+                align-items: center;
+                margin-right: 50px;
+
+                img {
+                    width: 20px;
+                    opacity: 0.5;
+                    transition: opacity 300ms ease;
+                }
+                
+                a {
+                    text-decoration: none;
+                    color: #000;
+                    margin-left: 10px;
+                    opacity: 0.5;
+                    transition: opacity 300ms ease;
+                }
+
+            }
+            
+            .track-links:hover a {
+                opacity: 1;
+            }
+            .track-links:hover img {
+                opacity: 0.8;
+            }
+            
+        }
+
+        .track-details-wrapper:hover {
+            background-color: #f7f7f7;
+            cursor: pointer;
+        }
+    }
+    
+}
