@@ -14,6 +14,5 @@ export default function ErrorTrackArticles() {
                 </div>
             </article>
         </div>
-    )
-    
+    )   
 }

@@ -27,16 +27,18 @@ export default class IdentifyingSong extends React.Component {
         const loadingInterval = setInterval(() => {
             let loadingProgress = this.state.loadingProgress
 
-            if (this.state.loadingProgress < 100) {
-                this.setState({ loadingProgress: loadingProgress = loadingProgress + 1 })
+            if (this.state.loadingProgress < 50) {
+                this.setState({ loadingProgress: loadingProgress = loadingProgress + 8 })
 
                 if (this.props.apiCallProgress.fetchedUrl) {
                     this.setState({ loadingProgress: 50 })
 
-                    if (this.state.loadingProgress < 90) {
-                        this.setState({ loadingProgress: loadingProgress = loadingProgress + 1 })
-                    }
+                    // if (this.state.loadingProgress < 90) {
+                    //     this.setState({ loadingProgress: loadingProgress = loadingProgress + 1 })
+                    // }
                 }
+            } else if (this.state.loadingProgress < 100) {
+                this.setState({ loadingProgress: loadingProgress = loadingProgress + 2 })
             }
 
         }, 1000)

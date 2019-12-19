@@ -20,54 +20,7 @@ class App extends React.Component {
         complete: false
       },
       tracklist: [
-        {
-          title: "lorem ipsum",
-          artist: "john smith",
-          timecode: "00:25",
-          href: "https://www.google.com/"
-        },
-        {
-          title: "lorem ipsum",
-          artist: "john smith",
-          timecode: "00:25",
-          href: "https://www.google.com/"
-        },
-        {
-          title: "lorem ipsum",
-          artist: "john smith",
-          timecode: "00:25",
-          href: "https://www.google.com/"
-        },
-        {
-          title: "lorem ipsum",
-          artist: "john smith",
-          timecode: "00:25",
-          href: "https://www.google.com/"
-        },
-        {
-          title: "lorem ipsum",
-          artist: "john smith",
-          timecode: "00:25",
-          href: "https://www.google.com/"
-        },
-        {
-          title: "lorem ipsum",
-          artist: "john smith",
-          timecode: "00:25",
-          href: "https://www.google.com/"
-        },
-        {
-          title: "lorem ipsum",
-          artist: "john smith",
-          timecode: "00:25",
-          href: "https://www.google.com/"
-        },
-        {
-          title: "lorem ipsum",
-          artist: "john smith",
-          timecode: "00:25",
-          href: "https://www.google.com/"
-        },
+       
       ],
       apiCallProgress: {
         fetchedUrl: false,
@@ -81,7 +34,6 @@ class App extends React.Component {
   }
 
   sortTrack = (tracklist) => {
-
     let sortedTracklist = tracklist.map(track => {
       return track.songs[0]
     })
@@ -155,5 +107,52 @@ export default App;
 
 
 
-
+// {
+//   title: "lorem ipsum",
+//   artist: "john smith",
+//   timecode: "00:25",
+//   href: "https://www.google.com/"
+// },
+// {
+//   title: "lorem ipsum",
+//   artist: "john smith",
+//   timecode: "00:25",
+//   href: "https://www.google.com/"
+// },
+// {
+//   title: "lorem ipsum",
+//   artist: "john smith",
+//   timecode: "00:25",
+//   href: "https://www.google.com/"
+// },
+// {
+//   title: "lorem ipsum",
+//   artist: "john smith",
+//   timecode: "00:25",
+//   href: "https://www.google.com/"
+// },
+// {
+//   title: "lorem ipsum",
+//   artist: "john smith",
+//   timecode: "00:25",
+//   href: "https://www.google.com/"
+// },
+// {
+//   title: "lorem ipsum",
+//   artist: "john smith",
+//   timecode: "00:25",
+//   href: "https://www.google.com/"
+// },
+// {
+//   title: "lorem ipsum",
+//   artist: "john smith",
+//   timecode: "00:25",
+//   href: "https://www.google.com/"
+// },
+// {
+//   title: "lorem ipsum",
+//   artist: "john smith",
+//   timecode: "00:25",
+//   href: "https://www.google.com/"
+// },
 
