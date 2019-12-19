@@ -20,7 +20,55 @@ class App extends React.Component {
         complete: false
       },
       tracklist: [
-       
+        {
+          title: "My Humps",
+          artist: "Black Eyed Peas",
+          timecode: "00:25",
+          href: "https://www.google.com/"
+        },
+        {
+          title: "Who Let the Dogs Out",
+          artist: "Baha Men",
+          timecode: "05:13",
+          href: "https://www.google.com/"
+        },
+        {
+          title: "The Safety Dance",
+          artist: "Men Without Hats",
+          timecode: "12:45",
+          href: "https://www.google.com/"
+        },
+        {
+          title: "Achy Breaky Heart",
+          artist: "Billy Ray Cyrus",
+          timecode: "17:15",
+          href: "https://www.google.com/"
+        },
+        {
+          title: "Ice Ice Baby",
+          artist: "Vanilla Ice",
+          timecode: "25:27",
+          href: "https://www.google.com/"
+        },
+        {
+          title: "Crazy Frog",
+          artist: "Axel F",
+          timecode: "33:38",
+          href: "https://www.google.com/"
+        },
+        {
+          title: "Barbie Girl",
+          artist: "Aqua",
+          timecode: "37:05",
+          href: "https://www.google.com/"
+        },
+        {
+          title: "You're Beautiful",
+          artist: "James Blunt",
+          timecode: "45:54",
+          href: "https://www.google.com/"
+        },
+        
       ],
       apiCallProgress: {
         fetchedUrl: false,
@@ -28,6 +76,8 @@ class App extends React.Component {
       }
     }
   }
+
+  apiDomain = window.location.hostname === 'localhost' ? 'http://localhost:7000/' : 'https://id-this.herokuapp.com/'
 
   updateApiCalls = (apiCalls) => {
     this.setState({ apiCalls })
@@ -40,14 +90,13 @@ class App extends React.Component {
     console.log(sortedTracklist);
     // this.setState({ tracklist: sortedTracklist})
 
-    this.setState({ apiCallProgress: { fetchedUrl: false, complete: true } })
-    this.updateApiCalls({ idle: false, pending: false, complete: true })
-
   }
 
   getTracklistFromApi = (url) => {
+    this.setState({ apiCallProgress: { fetchedUrl: false, complete: true } })
+    this.updateApiCalls({ idle: false, pending: false, complete: true })
     const data = { mp3Url: url }
-    axios.get(`http://localhost:7000/get-tracklist`, { params: data }).then(res => {
+    axios.get(`${this.apiDomain}get-tracklist`, { params: data }).then(res => {
       this.sortTrack(res.data)
     })
   }
@@ -56,14 +105,14 @@ class App extends React.Component {
     this.updateApiCalls({ idle: false, pending: true, complete: false })
     if (url.includes('www.youtube.com/watch?')) {
       const data = { youtubeUrl: url }
-      axios.get(`http://localhost:7000/get-youtube-mp3-url`, { params: data }).then(res => {
+      axios.get(`${this.apiDomain}get-youtube-mp3-url`, { params: data }).then(res => {
         this.setState({ apiCallProgress: { fetchedUrl: true, complete: false } })
         this.getTracklistFromApi(res.data)
       })
 
     } else if (url.includes('soundcloud.com')) {
       const data = { soundcloudUrl: url }
-      axios.get(`http://localhost:7000/get-soundcloud-mp3-url`, { params: data }).then(res => {
+      axios.get(`${this.apiDomain}get-soundcloud-mp3-url`, { params: data }).then(res => {
         this.setState({ apiCallProgress: { fetchedUrl: true, complete: false } })
         this.getTracklistFromApi(res.data)
       })
@@ -104,55 +153,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-
-
-// {
-//   title: "lorem ipsum",
-//   artist: "john smith",
-//   timecode: "00:25",
-//   href: "https://www.google.com/"
-// },
-// {
-//   title: "lorem ipsum",
-//   artist: "john smith",
-//   timecode: "00:25",
-//   href: "https://www.google.com/"
-// },
-// {
-//   title: "lorem ipsum",
-//   artist: "john smith",
-//   timecode: "00:25",
-//   href: "https://www.google.com/"
-// },
-// {
-//   title: "lorem ipsum",
-//   artist: "john smith",
-//   timecode: "00:25",
-//   href: "https://www.google.com/"
-// },
-// {
-//   title: "lorem ipsum",
-//   artist: "john smith",
-//   timecode: "00:25",
-//   href: "https://www.google.com/"
-// },
-// {
-//   title: "lorem ipsum",
-//   artist: "john smith",
-//   timecode: "00:25",
-//   href: "https://www.google.com/"
-// },
-// {
-//   title: "lorem ipsum",
-//   artist: "john smith",
-//   timecode: "00:25",
-//   href: "https://www.google.com/"
-// },
-// {
-//   title: "lorem ipsum",
-//   artist: "john smith",
-//   timecode: "00:25",
-//   href: "https://www.google.com/"
-// },
-

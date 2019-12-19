@@ -15,7 +15,7 @@ export default class IdentifyingSong extends React.Component {
 
     componentDidMount() {
         const jokeInterval = setInterval(() => {
-            axios.get('http://api.icndb.com/jokes/random?').then(res => {
+            axios.get('https://api.icndb.com/jokes/random?').then(res => {
                 this.setState({
                     joke: res.data.value.joke,
                     jokeInterval
@@ -28,7 +28,7 @@ export default class IdentifyingSong extends React.Component {
             let loadingProgress = this.state.loadingProgress
 
             if (this.state.loadingProgress < 50) {
-                this.setState({ loadingProgress: loadingProgress = loadingProgress + 8 })
+                this.setState({ loadingProgress: loadingProgress = loadingProgress + 6 })
 
                 if (this.props.apiCallProgress.fetchedUrl) {
                     this.setState({ loadingProgress: 50 })
@@ -37,7 +37,7 @@ export default class IdentifyingSong extends React.Component {
                     //     this.setState({ loadingProgress: loadingProgress = loadingProgress + 1 })
                     // }
                 }
-            } else if (this.state.loadingProgress < 100) {
+            } else if (this.state.loadingProgress < 93) {
                 this.setState({ loadingProgress: loadingProgress = loadingProgress + 2 })
             }
 
