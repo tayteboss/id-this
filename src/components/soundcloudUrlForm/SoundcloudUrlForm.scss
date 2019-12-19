@@ -6,6 +6,7 @@
 label {
     display: block;
     opacity: 0.3;
+    display: inline;
 }
 
 input {
@@ -13,4 +14,8 @@ input {
     border: none;
     font-size: 31px;
     width: 100%;
+}
+
+.error {
+    opacity: 1;
 }

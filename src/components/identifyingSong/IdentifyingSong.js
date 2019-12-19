@@ -23,20 +23,23 @@ export default class IdentifyingSong extends React.Component {
             })
         }, 5000)
 
+
         const loadingInterval = setInterval(() => {
             let loadingProgress = this.state.loadingProgress
-            if (this.props.apiCallProgress.complete) {
-                this.setState({ loadingProgress: 100 })
-            } else if (this.props.apiCallProgress.fetchedUrl) {
-                if (this.state.loadingProgress < 90) {
-                    this.setState({ loadingProgress: loadingProgress = loadingProgress + 1 })
-                }
-            } else {
-                if (this.state.loadingProgress < 45) {
-                    this.setState({ loadingProgress: loadingProgress = loadingProgress + 1 })
+
+            if (this.state.loadingProgress < 100) {
+                this.setState({ loadingProgress: loadingProgress = loadingProgress + 1 })
+
+                if (this.props.apiCallProgress.fetchedUrl) {
+                    this.setState({ loadingProgress: 50 })
+
+                    if (this.state.loadingProgress < 90) {
+                        this.setState({ loadingProgress: loadingProgress = loadingProgress + 1 })
+                    }
                 }
             }
-        }, 500)
+
+        }, 1000)
     }
 
     componentWillUnmount() {
@@ -60,7 +63,7 @@ export default class IdentifyingSong extends React.Component {
                         <span>step 2 - </span><p>identifying songs...</p>
                     </div>
                     <p className="body-text loading-hint">This may take some time...<br/>Here are some chuck norris facts:</p>
-                    <p className="percentage-loader">18%</p>
+                    <p className="percentage-loader">{this.state.loadingProgress}%</p>
                 </div>
                 <div className="fact-wrapper">
                     <h2>{this.state.joke}</h2>
